@@ -1,0 +1,78 @@
+# AG - Version 0.2
+# Aqui van los parámetros del programa. Para escribir un nuevo parametro se hace de la siguiente
+# forma: <nombre_param_sin_espacios> = <valor_param>
+
+# Problem Type = Tipo de Problema (0: clasificación, 1: regresión)
+pt = 1
+# Nombre del fichero
+filename = 'wpbc-regression.csv'
+# Columna de COR (Clasification Or Regression) : se corresponde a la columna donde esta la variable a predecir
+cor_col = 'time'
+
+# Elegimos qué tipo de ag() ejecutar
+mu_lambda = 1
+
+# Semilla de los random()
+random_seed = 48	
+
+# Cross validation
+kfolds = 5
+
+# Regresión Lineal
+best_params = False
+normalize = False
+
+# Parámetros del AG
+# Nº generaciones y padres
+	# 100 -> no {1000-10000}
+num_generations = 200
+# Nº padres = Tam. poblacion
+#num_parents_mating = 100
+# Tamaño poblacion y genes
+sol_per_pop = 50
+#num_genes = data.W <-- Se calcula en base a los datos
+# Rango de las variables (binario [0,1])
+init_range_low = 0
+init_range_high = 1
+# Selección:
+	# 'rank' = Ranking, 'tournament' = Torneo, 'sss' = steady, 'rws' = roulette wheel
+parent_selection_type = 'mulambda-nqc-rp'
+K_tournament = 2
+	# (mu + lambda)
+keep_parents = 1
+# Cruce: "uniform"
+crossover_type = "uniform"
+crossover_probability = 0.5
+# Mutación:
+mutation_type = "random"
+mutation_probability = 0.9
+
+# Quick Convergence (mu+lambda)
+qc = False
+# Reinicializamos población si se satura (mu+lambda)
+reset_pop = True
+# Condicion de benchmark
+is_benchmark = False
+
+# Mostrar resultados:
+# Variable auxiliar para decidir si imprimir o no los "print()"
+verbose = False	
+# Variable auxiliar para decidir si escribir o no los resultados en un fichero	
+write = False
+# Variable auxiliar para decidir si mostrar y guardar o no la figura
+figure = True
+# Variable auxiliar que indica la precision (nº de decimales a mostrar)
+precision = 6
+
+# Configuración del tamaño de la imagen de la figura generada
+# DPI del monitor
+my_dpi = 96	
+img_h = 720
+img_w = 640
+
+# Fichero de salida
+output_file = 'sample.txt'
+# Fichero donde almacenar la figura
+figure_filename = 'figura-prueba.jpg'
+# TODO: Fichero donde almacenar los resultados de los benchmarks
+# filewriter
